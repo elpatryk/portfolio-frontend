@@ -1,0 +1,64 @@
+.main {
+  width: 100%;
+  height: 100vh;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Rubik Glitch", cursive;
+  font-size: larger;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.product {
+  display: flex;
+  max-width: 80%;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  box-shadow: 0 0 2px 3px rgb(121, 60, 156);
+}
+.player {
+  display: flex;
+  max-width: 80%;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  color: black;
+  background-color: rgb(121, 60, 156);
+  box-shadow: 0 0 2px 3px rgb(121, 60, 156);
+}
+.card-writting {
+  max-width: 50%;
+}
+
+.product-image {
+  margin: 90px;
+  margin-left: 1px;
+}
+
+.card-body {
+  padding: 16px;
+}
