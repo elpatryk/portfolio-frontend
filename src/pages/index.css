@@ -62,3 +62,14 @@ video {
 .card-body {
   padding: 16px;
 }
+
+.events {
+  display: flex;
+  max-width: 80%;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  color: black;
+  box-shadow: 0 0 2px 3px rgb(121, 60, 156);
+  background-color: rgb(121, 60, 156);
+}
