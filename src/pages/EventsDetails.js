@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { selectByIdEvent } from "../store/events/selectors";
-import { eventById } from "../store/events/thunks";
-import { Title } from "../styled";
+import { eventById, postMatches } from "../store/events/thunks";
+import { Button } from "../styled";
 
 export default function EventsDetails() {
   const params = useParams();
@@ -13,6 +13,11 @@ export default function EventsDetails() {
   useEffect(() => {
     dispatch(eventById(`${params.id}`));
   }, [dispatch, params.id]);
+
+  const onClickGenerate = (eventId) => {
+    dispatch(postMatches(eventId));
+  };
+
   return (
     <div>
       <div>
@@ -29,6 +34,9 @@ export default function EventsDetails() {
                 </div>
               );
             })}
+        <Button onClick={() => onClickGenerate(eventDetails.id)}>
+          Generate 1 round
+        </Button>
       </div>
     </div>
   );

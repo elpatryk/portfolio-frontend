@@ -93,3 +93,14 @@ export const postEventParticipations = (eventId) => {
     }
   };
 };
+
+export const postMatches = (id) => {
+  return async (dispatch, getState) => {
+    try {
+      const response = await axios.post(`${apiUrl}/events/${id}/start`);
+      console.log("Post matches: ", response.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};
