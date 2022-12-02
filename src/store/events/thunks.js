@@ -1,7 +1,8 @@
+import { fireEvent } from "@testing-library/react";
 import axios from "axios";
 import { appDoneLoading, appLoading, setMessage } from "../appState/slice";
 import { showMessageWithTimeout } from "../appState/thunks";
-import { allEvents, specificEvent } from "./slice";
+import { allEvents, receivedMatches, specificEvent } from "./slice";
 
 const apiUrl = "http://localhost:4000";
 
@@ -94,11 +95,25 @@ export const postEventParticipations = (eventId) => {
   };
 };
 
-export const postMatches = (id) => {
-  return async (dispatch, getState) => {
+export const generateMatches = (id) => {
+  return async (dispatch) => {
     try {
       const response = await axios.post(`${apiUrl}/events/${id}/start`);
       console.log("Post matches: ", response.data);
+      //   dispatch(firstRound(response.data));
+      dispatch(getMatches(id));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};
+
+export const getMatches = (id) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(`${apiUrl}/events/matches/${id}`);
+      console.log("get matches", response);
+      dispatch(receivedMatches(response.data));
     } catch (e) {
       console.log(e);
     }

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectEvent } from "../store/events/selectors";
 import {
   getEvents,
+  getMatches,
   postEvent,
   postEventParticipations,
 } from "../store/events/thunks";
