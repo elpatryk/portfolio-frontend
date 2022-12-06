@@ -119,3 +119,21 @@ export const getMatches = (id) => {
     }
   };
 };
+
+export const sendResult = (id, teamAScore, teamBScore) => {
+  return async (dispatch, getState) => {
+    const eventId = getState().event.details.id;
+    console.log(eventId);
+
+    try {
+      const response = await axios.patch(
+        `${apiUrl}/events/matches/results/${id}`,
+        { teamAScore: teamAScore, teamBScore: teamBScore }
+      );
+      // console.log("result: ", teamAScore, teamBScore);
+      dispatch(getMatches(eventId));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import MatchesCard from "../components/MatchesCard";
 import { selectByIdEvent, selectMatches } from "../store/events/selectors";
 import { eventById, getMatches, generateMatches } from "../store/events/thunks";
 import { Button } from "../styled";
@@ -21,9 +22,6 @@ export default function EventsDetails() {
   const onClickGenerate = (eventId) => {
     dispatch(generateMatches(eventId));
   };
-
-  const [resultA, setResultA] = useState();
-  const [resultB, setResultB] = useState();
 
   return (
     <div>
@@ -47,17 +45,14 @@ export default function EventsDetails() {
         <div>
           {!matches
             ? "loading"
-            : matches.map((match) => {
-                return (
-                  <div key={match.id}>
-                    {match.team_A.name} <input key={resultA} type="number" /> -{" "}
-                    <input key={resultB} type="number" /> {match.team_B.name}{" "}
-                    <div>
-                      <Button>Send result</Button>{" "}
-                    </div>
-                  </div>
-                );
-              })}
+            : matches.map((match) => (
+                <MatchesCard key={match.id} match={match} />
+              ))}
+          {!matches
+            ? "loading"
+            : matches.every((match) => match.winnerId) && (
+                <Button>Generate Next Round</Button>
+              )}
         </div>
       </div>
     </div>
