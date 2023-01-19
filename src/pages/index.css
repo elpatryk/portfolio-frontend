@@ -45,8 +45,9 @@ video {
   max-width: 80%;
   margin-top: 5%;
   margin-left: 15%;
+  color: white;
   margin-right: 15%;
-  color: black;
+
   background-color: rgb(121, 60, 156);
   box-shadow: 0 0 2px 3px rgb(121, 60, 156);
 }
@@ -62,7 +63,24 @@ video {
 .card-body {
   padding: 16px;
 }
-
+.events11 {
+  display: flex;
+  max-width: 20%;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  color: black;
+  box-shadow: 0 0 3px 4px rgb(85 40 87);
+  background: #ce42cd;
+  background: #000000;
+  background: #c941c9;
+  background: linear-gradient(to bottom, #c941c9 0%, #6d2772 50%, #9b419b 100%);
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
 .events {
   display: flex;
   max-width: 80%;
@@ -70,6 +88,72 @@ video {
   margin-left: 15%;
   margin-right: 15%;
   color: black;
+  box-shadow: 0 0 3px 4px rgb(85, 40, 87);
+  background: #ce42cd;
+  background: #000000;
+  background: #c941c9;
+  background: -moz-linear-gradient(top, #c941c9 0%, #6d2772 50%, #9b419b 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #c941c9 0%,
+    #6d2772 50%,
+    #9b419b 100%
+  );
+  background: linear-gradient(to bottom, #c941c9 0%, #6d2772 50%, #9b419b 100%);
+}
+
+.player-card {
+  display: flex;
+  max-width: 100%;
+  height: 250px;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  justify-content: space-between;
+  color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: xx-large;
   box-shadow: 0 0 2px 3px rgb(121, 60, 156);
-  background-color: rgb(121, 60, 156);
+  background: #c941c9;
+  background: -moz-linear-gradient(top, #c941c9 0%, #6d2772 50%, #291129 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #c941c9 0%,
+    #6d2772 50%,
+    #291129 100%
+  );
+  background: linear-gradient(to bottom, #c941c9 0%, #6d2772 50%, #291129 100%);
+  align-items: center;
+}
+.icon-logo {
+  max-width: 15%;
+}
+
+.logo {
+  display: grid;
+}
+
+.match {
+  width: 50%;
+}
+.input {
+  width: 30px;
+}
+.events1 {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-top: 5%;
+  display: flex;
+  box-shadow: 0px 14px 10px 10px #291129;
+  background: #c941c9;
+  background: -moz-linear-gradient(top, #c941c9 0%, #6d2772 50%, #291129 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #c941c9 0%,
+    #6d2772 50%,
+    #291129 100%
+  );
+  background: linear-gradient(to bottom, #c941c9 0%, #6d2772 50%, #291129 100%);
+  align-items: center;
 }

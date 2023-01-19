@@ -8,7 +8,8 @@ export default function FrontPage() {
     <div className="main">
       <video src={videoBg} autoPlay muted className="video" />
       <div className="content">
-        Our website is created for people who want to play football.
+        Our website is created for people who want to play football. On Slice of
+        Football you can create Tournaments or chat with other players.
         <Link to="/login">
           <Button>Login</Button>
         </Link>

@@ -37,7 +37,7 @@ export default function EventPage() {
         ? "loading"
         : event.map((e) => {
             return (
-              <div className="events">
+              <div className="events11">
                 {" "}
                 <Button onClick={() => onClickJoin(e.id)}>Join to Event</Button>
                 <Link to={`/events/${e.id}`}>
@@ -48,28 +48,6 @@ export default function EventPage() {
               </div>
             );
           })}
-      <Button>New event?</Button>
-      <form onSubmit={submitForm}>
-        <Input
-          placeholder="title for event"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <Input
-          type="number"
-          placeholder="on which pitch you wanna play?"
-          value={pitchId}
-          onChange={(e) => setPitchId(e.target.value)}
-        />{" "}
-        <Input
-          type="number"
-          placeholder="how many teams you want in this event?"
-          value={capacity}
-          onChange={(e) => setCapacity(e.target.value)}
-        />
-        <br />
-        <Button type="submit">Create new Event</Button>
-      </form>
     </div>
   );
 }

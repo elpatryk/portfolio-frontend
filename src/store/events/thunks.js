@@ -137,3 +137,18 @@ export const sendResult = (id, teamAScore, teamBScore) => {
     }
   };
 };
+
+export const generateNextRound = (id, round) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.post(`${apiUrl}/events/matches/next/${id}`, {
+        round: round,
+      });
+      console.log("Post next reound: ", response.data);
+      //   dispatch(firstRound(response.data));
+      dispatch(getMatches(id));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};

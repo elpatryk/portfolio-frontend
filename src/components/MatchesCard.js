@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Button } from "../styled";
 import { sendResult } from "../store/events/thunks";
-
+import "../pages/index.css";
 const MatchesCard = ({ match }) => {
   const dispatch = useDispatch();
 
@@ -14,35 +14,38 @@ const MatchesCard = ({ match }) => {
   return (
     <div>
       {match.winnerId ? (
-        <table>
-          <tr>
-            <th>Team A</th>
-            <th></th>
-            <th></th>
-            <th>Team B</th>
-            <th></th>
-          </tr>
-          <tr>
-            <th>{match.team_A.name}</th>
-            <th>{match.teamAScore} : </th>
-            <th>{match.teamBScore}</th>
-            <th>{match.team_B.name}</th>
-          </tr>
-        </table>
+        <div className="events1">
+          <div>
+            <strong>
+              {match.team_A.name}
+              <img src={match.team_A.logo} alt="" width="30px" />
+              {"    "}
+              {match.teamAScore} : {match.teamBScore}
+              {"   "}
+              <img src={match.team_B.logo} alt="" width="30px" />
+              {match.team_B.name}{" "}
+            </strong>
+          </div>
+        </div>
       ) : (
-        <div>
-          <input
-            value={teamAScore}
-            onChange={(event) => setTeamAScore(event.target.value)}
-            type="number"
-          />{" "}
-          -{" "}
-          <input
-            value={teamBScore}
-            onChange={(event) => setTeamBScore(event.target.value)}
-            type="number"
-          />{" "}
-          {match.team_B.name}{" "}
+        <div className="events1">
+          <strong>
+            {match.team_A.name}{" "}
+            <input
+              className="input"
+              value={teamAScore}
+              onChange={(event) => setTeamAScore(event.target.value)}
+              type="number"
+            />{" "}
+            -{" "}
+            <input
+              className="input "
+              value={teamBScore}
+              onChange={(event) => setTeamBScore(event.target.value)}
+              type="number"
+            />{" "}
+            {match.team_B.name}{" "}
+          </strong>
           <div>
             <Button
               onClick={() =>

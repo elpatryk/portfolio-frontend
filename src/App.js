@@ -12,6 +12,7 @@ import PitchesPage from "./pages/PitchesPage";
 import TeamPage from "./pages/TeamPage";
 import EventPage from "./pages/EventPage";
 import EventsDetails from "./pages/EventsDetails";
+import NewEvent from "./pages/NewEvent";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
         )}
         <Route path="/events/:id" element={<EventsDetails />} />
+        <Route path="/new/events" element={<NewEvent />} />
         <Route path="/events" element={<EventPage />} />
         <Route path="/teams" element={<TeamPage />} />
         <Route path="/pitches" element={<PitchesPage />} />

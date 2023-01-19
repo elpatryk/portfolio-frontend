@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../store/user/selectors";
 import { getUserWithStoredToken } from "../store/user/thunks";
+import { Button } from "../styled";
 
 export const Homepage = () => {
   const dispatch = useDispatch();
@@ -13,12 +14,20 @@ export const Homepage = () => {
         {!profile ? (
           "loading"
         ) : (
-          <div>
+          <div className="player-card">
             <img src={profile.imgUrl} alt="not found" width="200px" />
-            <p>First Name: {profile.firstName} </p>
-            <p>Last name: {profile.lastName}</p>
-            <p>Birthday: {profile.birthday}</p>
-            <p>Team: {profile.team.name}</p>
+            <div className="">
+              {" "}
+              <div> {profile.firstName}</div>
+              <div> {profile.lastName} </div>
+              <div> {profile.birthday}</div>
+              <div>
+                {" "}
+                Team: {profile.team.name}{" "}
+                <img className="icon-logo" src={profile.team.logo} alt="" />
+              </div>
+            </div>
+            <Button>Edit Your Profile</Button>
           </div>
         )}
       </div>

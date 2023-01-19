@@ -36,6 +36,7 @@ export const Navigation = () => {
         ""
       ) : (
         <Menu open={open}>
+          <MenuLink to="/new/events">Create Events</MenuLink>
           <MenuLink to="/events">Events</MenuLink>
           <MenuLink to="/pitches">All pitches</MenuLink>
           <MenuLink to="/teams">Your team</MenuLink>
